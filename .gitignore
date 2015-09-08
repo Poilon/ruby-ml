@@ -1,0 +1,11 @@
+.bundle*
+vendor/bundle*
+vendor/cache/
+*.DS_Store
+.idea
+.resque
+config/database.yml
+config/development.yml
+.env
+vendor/ruby
+*.swp

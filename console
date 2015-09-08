@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+# Using the boot script
+require_relative './config/boot'
+def reload!
+  $LOADED_FEATURES.select { |f| f =~ /#{APP_ROOT}/ }.each { |f| load f }
+  puts 'Reload OK !'
+end
+
+begin
+  require 'pry'
+  Interpreter = Pry
+rescue LoadError
+  require 'irb'
+  require 'irb/completion'
+  Interpreter = IRB
+end
+
+# START
+Interpreter.start
