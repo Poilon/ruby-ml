@@ -31,7 +31,7 @@ module Mapper
         hash[json[@type]] += Sanitize.clean(json['title'] + ' ' + json['description'])
       end
       hash.each do |name, text|
-        hash[name] = KeywordsGenerator.new(text, 'feeling', 3).result_percentage.map do |el|
+        hash[name] = KeywordsGenerator.new(text, @type, 3).result_percentage.map do |el|
           "#{el[0]},0,#{(el[1] * 1000).to_i}"
         end
       end
