@@ -2,7 +2,7 @@ LANG = 'en_US.UTF-8'
 LC_ALL = 'en_US.UTF-8'
 
 source 'http://rubygems.org'
-ruby '2.2.2'
+ruby '2.5.0'
 
 # Database PostgreSQL
 gem 'pg'
